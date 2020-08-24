@@ -1,0 +1,16 @@
+{
+  "name": "paack-ui-assets",
+  "version": "0.0.11",
+  "description": "",
+  "files": ["js"],
+  "scripts": {
+    "prepublish": "make build"
+  },
+  "author": "PackEng",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "svg-sprite": "^1.5.0",
+    "svgo": "^1.3.2"
+  }
+}
