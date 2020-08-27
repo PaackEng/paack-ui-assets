@@ -7,7 +7,7 @@
     "prepublish": "make build"
   },
   "author": "PackEng",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "parcel-bundler": "^1.12.4",
     "svg-sprite": "^1.5.0",
