@@ -11,8 +11,7 @@
     "build-parcel": "parcel build src/js/**.js --out-dir ./js",
     "build-spritesheet": "npm run optimize-svgs && npm run create-svg-sprite",
     "optimize-svgs": "svgo --config=./svgo.json --folder=./src/svg --output=./dist/optimizedSvg --multipass",
-    "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icon-sprite.svg dist/optimizedSvg/*.svg",
-    "build-svg-icon-sprite": "npm run optimize-svgs && npm run create-svg-sprite"
+    "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icon-sprite.svg dist/optimizedSvg/*.svg"
   },
   "author": "PackEng",
   "license": "MIT",
