@@ -2,15 +2,15 @@ publish:
 	npm publish
 
 build: build-svg-icon-sprite
-	npx parcel build src/js/paackSvgIconSprite.js --out-dir ./js
+	npm run build
 
 
 build-svg-icon-sprite: optimize-svgs create-svg-sprite
 
 optimize-svgs:
-	npx svgo --config=./svgo.json --folder=./src/svg --output=./dist/optimizedSvg --multipass
+	npm run optimize-svgs
 
 create-svg-sprite:
-	npx svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icon-sprite.svg dist/optimizedSvg/*.svg
+	npm run create-svg-sprite
 
 .PHONY: build-svg-icon-sprite publish optimize-svgs create-svg-sprite
