@@ -14,19 +14,25 @@ const template = Object.assign(document.createElement('template'), {
   
         .tooltip {
           outline: 0;
-          position: absolute;
+          position: fixed;
           top: calc(100% + 8px);
           display: block;
           z-index: 1;
           background: rgba(228, 228, 228);
           border-radius: 8px;
-          width: 100%;
           box-sizing: content-box;
           left: -12px;
           opacity: 0;
-          width: 0;
           clip: rect(0, 0, 0, 0);
           word-break: break-all;
+          pointer-events: none;
+          font-family: Inter;
+          font-style: normal;
+          font-weight: normal;
+          font-size: 16px;
+          line-height: 24px;
+          letter-spacing: 0.2px;
+          color: #0E1420;
         }
   
         .tooltip::before {
@@ -37,7 +43,7 @@ const template = Object.assign(document.createElement('template'), {
           border-bottom-color: rgba(228, 228, 228);
           position: absolute;
           top: -16px;
-          right: 16px;
+          right: 32px;
         }
   
         .tooltip::after {
@@ -49,17 +55,15 @@ const template = Object.assign(document.createElement('template'), {
           right: 0;
           background: transparent;
         }
-  
-        .tooltip:focus,
-        .text--overflown:focus + .tooltip,
-        .text--overflown:hover + .tooltip {
+
+        .tooltip.show {
           opacity: 1;
           width: 100%;
           padding: 8px 16px;
           clip: auto;
         }
       </style>
-      <span class="text"></span>
+        <span class="text"></span>
     `,
 });
 
@@ -74,6 +78,7 @@ class EllipsizableText extends HTMLElement {
 
   connectedCallback() {
     const { textContent } = this;
+
     const text = this.shadowRoot.querySelector('.text');
 
     text.textContent = textContent;
@@ -86,8 +91,19 @@ class EllipsizableText extends HTMLElement {
         const tooltip = text.cloneNode(true);
 
         tooltip.setAttribute('tabIndex', 0);
-
         tooltip.className = 'tooltip';
+
+        text.addEventListener('mouseenter', () => {
+          tooltip.classList.add('show');
+
+          const bounds = text.getBoundingClientRect();
+          tooltip.style.top = `${bounds.top + bounds.height}px`;
+          tooltip.style.left = `${bounds.left}px`;
+          tooltip.style.width = `${bounds.width}px`;
+        });
+
+        text.addEventListener('mouseleave', () => tooltip.classList.remove('show'));
+
         this.shadowRoot.appendChild(tooltip);
       }
     });
