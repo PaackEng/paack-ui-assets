@@ -82,11 +82,20 @@ class EllipsizableText extends HTMLElement {
 
     this.textNode.textContent = textContent;
 
-    runDelayed(this.addTooltip.bind(this));
+    runDelayed(this.updateTooltip.bind(this));
   }
 
-  addTooltip () {
-    if (this.textNode.offsetWidth < this.textNode.scrollWidth) {
+  updateTooltip () {
+    const isOverflowing = this.textNode.offsetWidth < this.textNode.scrollWidth
+    const existingTooltip = this.getExistingTooltip()
+
+    if (existingTooltip && !isOverflowing) {
+      this.shadowRoot.removeChild(existingTooltip)
+      this.textNode.removeAttribute('tabIndex');
+      this.textNode.classList.remove('text--overflown');
+    }
+
+    if (!existingTooltip && isOverflowing) {
       this.textNode.setAttribute('tabIndex', 0);
       this.textNode.classList.add('text--overflown');
 
@@ -99,10 +108,14 @@ class EllipsizableText extends HTMLElement {
     }
   }
 
+  getExistingTooltip () {
+    return this.shadowRoot.querySelector('.tooltip')
+  }
+
   attributeChangedCallback(attrName, oldVal, newVal) {
     if (attrName === TEXT_ATTRIBUTE && oldVal !== null) {
       this.textNode.textContent = newVal;
-      this.addTooltip()
+      this.updateTooltip()
     }
   }
 }
