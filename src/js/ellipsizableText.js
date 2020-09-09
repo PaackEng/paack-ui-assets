@@ -65,7 +65,7 @@ const template = Object.assign(document.createElement('template'), {
 
 const runDelayed = window.requestIdleCallback || window.requestAnimationFrame;
 
-const TEXT_ATTRIBUTE = 'text'
+const TEXT_ATTRIBUTE = 'text';
 
 class EllipsizableText extends HTMLElement {
   constructor() {
@@ -86,11 +86,11 @@ class EllipsizableText extends HTMLElement {
   }
 
   updateTooltip () {
-    const isOverflowing = this.textNode.offsetWidth < this.textNode.scrollWidth
-    const existingTooltip = this.getExistingTooltip()
+    const isOverflowing = this.textNode.offsetWidth < this.textNode.scrollWidth;
+    const existingTooltip = this.getExistingTooltip();
 
     if (existingTooltip && !isOverflowing) {
-      this.shadowRoot.removeChild(existingTooltip)
+      this.shadowRoot.removeChild(existingTooltip);
       this.textNode.removeAttribute('tabIndex');
       this.textNode.classList.remove('text--overflown');
     }
@@ -109,13 +109,13 @@ class EllipsizableText extends HTMLElement {
   }
 
   getExistingTooltip () {
-    return this.shadowRoot.querySelector('.tooltip')
+    return this.shadowRoot.querySelector('.tooltip');
   }
 
   attributeChangedCallback(attrName, oldVal, newVal) {
     if (attrName === TEXT_ATTRIBUTE && oldVal !== null) {
       this.textNode.textContent = newVal;
-      this.updateTooltip()
+      this.updateTooltip();
     }
   }
 }
