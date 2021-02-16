@@ -19,6 +19,7 @@
   "license": "MIT",
   "devDependencies": {
     "@percy/cypress": "^2.3.4",
+    "cypress": "^6.5.0",
     "eslint": "^7.14.0",
     "parcel-bundler": "^1.12.4",
     "svg-sprite": "^1.5.0",
