@@ -11,12 +11,14 @@
     "build-parcel": "parcel build src/js/*.js --out-dir ./js",
     "build-spritesheet": "npm run optimize-svgs && npm run create-svg-sprite",
     "optimize-svgs": "svgo --config=./svgo.json --folder=./src/svg --output=./dist/optimizedSvg --multipass",
-    "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icon-sprite.svg dist/optimizedSvg/*.svg",
-    "lint": "eslint src/js"
+    "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icon-sprite.svg dist/optimizedSvg/*.svg --symbol-example=true",
+    "lint": "eslint src/js",
+    "preview": "npm run build-spritesheet && parcel serve dist/sprite.symbol.html"
   },
   "author": "PackEng",
   "license": "MIT",
   "devDependencies": {
+    "@percy/cypress": "^2.3.4",
     "eslint": "^7.14.0",
     "parcel-bundler": "^1.12.4",
     "svg-sprite": "^1.5.0",
