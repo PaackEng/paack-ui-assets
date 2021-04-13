@@ -18,7 +18,8 @@
   "author": "PackEng",
   "license": "MIT",
   "devDependencies": {
-    "@percy/cypress": "^2.3.4",
+    "@percy/cli": "^1.0.0-beta.47",
+    "@percy/cypress": "^3.0.0",
     "cypress": "^6.5.0",
     "eslint": "^7.14.0",
     "parcel-bundler": "^1.12.4",
