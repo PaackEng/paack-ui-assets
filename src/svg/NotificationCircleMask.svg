@@ -1,0 +1,8 @@
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="0" height="0">
+<defs>
+<mask id="notification-circle-mask" maskUnits="objectBoundingBox" maskContentUnits="objectBoundingBox">
+<rect fill="white" x="0" y="0" height="1" width="1"></rect>
+<circle fill="black" r="0.25" cx="0.75" cy="0.25"></circle>
+</mask>
+</defs>
+</svg>
