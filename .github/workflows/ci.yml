@@ -17,7 +17,7 @@ jobs:
        uses: actions/checkout@v2
 
      - name: Setup Node
-       uses: actions/setup-node@v2
+       uses: actions/setup-node@v2.1.5
 
      - name: Get yarn cache directory path
        id: yarn-cache-dir-path
@@ -46,7 +46,7 @@ jobs:
        uses: actions/checkout@v2
 
      - name: Setup Node
-       uses: actions/setup-node@v2
+       uses: actions/setup-node@v2.1.5
 
      - name: Get yarn cache directory path
        id: yarn-cache-dir-path
