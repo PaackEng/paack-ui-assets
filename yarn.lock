@@ -1311,6 +1311,11 @@
   dependencies:
     "@types/node" "*"
 
+"@xmldom/xmldom@^0.7.2":
+  version "0.7.2"
+  resolved "https://registry.yarnpkg.com/@xmldom/xmldom/-/xmldom-0.7.2.tgz#d920079e66806b2626b5311955f6a7c4bed1cba8"
+  integrity sha512-t/Zqo0ewes3iq6zGqEqJNUWI27Acr3jkmSUNp6E3nl0Z2XbtqAG5XYqPNLdYonILmhcxANsIidh69tHzjXtuRg==
+
 abab@^2.0.0:
   version "2.0.5"
   resolved "https://registry.yarnpkg.com/abab/-/abab-2.0.5.tgz#c0b678fb32d60fc1219c784d6a826fe385aeb79a"
@@ -1530,7 +1535,7 @@ async-limiter@~1.0.0:
   resolved "https://registry.yarnpkg.com/async-limiter/-/async-limiter-1.0.1.tgz#dd379e94f0db8310b08291f9d64c3209766617fd"
   integrity sha512-csOlWGAcRFJaI6m+F2WKdnMKr4HhdhFVBk0H/QbJFMCr+uO2kwohwXQPxw/9OCxp05r5ghVBFSyioixx3gfkNQ==
 
-async@^3.1.0, async@^3.2.0:
+async@^3.1.0, async@^3.2.0, async@^3.2.1:
   version "3.2.1"
   resolved "https://registry.yarnpkg.com/async/-/async-3.2.1.tgz#d3274ec66d107a47476a4c49136aacdb00665fc8"
   integrity sha512-XdD5lRO/87udXCMC9meWdYiR+Nq6ZjUfXidViUZGu2F1MO4T3XwZ1et0hb2++BgLfhyJwy44BGB/yx80ABx8hg==
@@ -6710,11 +6715,12 @@ supports-color@^8.1.1:
     has-flag "^4.0.0"
 
 svg-sprite@^1.5.0:
-  version "1.5.1"
-  resolved "https://registry.yarnpkg.com/svg-sprite/-/svg-sprite-1.5.1.tgz#4ef5fa9b13f63a6b10d7680f06db28f54952b681"
-  integrity sha512-Nv9VTanjSNEFqvIOCcjQmPLt6JnTRV/KVkbCgZjtVP7Z83v/sVjNHLX9m4ytEySRhj05S01CggqPhrZQ6hywyw==
+  version "1.5.2"
+  resolved "https://registry.yarnpkg.com/svg-sprite/-/svg-sprite-1.5.2.tgz#697aac4026123d2492c3e8efc18bb8ac65bfeeb6"
+  integrity sha512-ifDmjrhdV0OdKJp2tSssBT2m97e7gNpwWCMaapEBqe3wHTOsv1UFolQKBzC1wdVUUXdCa62tijVYPmuVSDCTmA==
   dependencies:
-    async "^3.2.0"
+    "@xmldom/xmldom" "^0.7.2"
+    async "^3.2.1"
     css-selector-parser "^1.4.1"
     cssmin "^0.4.3"
     cssom "^0.4.4"
@@ -6728,7 +6734,6 @@ svg-sprite@^1.5.0:
     svgo "^1.3.2"
     vinyl "^2.2.1"
     winston "^3.3.3"
-    xmldom "0.6.0"
     xpath "^0.0.32"
     yargs "^15.4.1"
 
@@ -7362,11 +7367,6 @@ xmlchars@^2.1.1:
   version "2.2.0"
   resolved "https://registry.yarnpkg.com/xmlchars/-/xmlchars-2.2.0.tgz#060fe1bcb7f9c76fe2a17db86a9bc3ab894210cb"
   integrity sha512-JZnDKK8B0RCDw84FNdDAIpZK+JuJw+s7Lz8nksI7SIuU3UXJJslUthsi+uWBUYOwPFwW7W7PRLRfUKpxjtjFCw==
-
-xmldom@0.6.0:
-  version "0.6.0"
-  resolved "https://registry.yarnpkg.com/xmldom/-/xmldom-0.6.0.tgz#43a96ecb8beece991cef382c08397d82d4d0c46f"
-  integrity sha512-iAcin401y58LckRZ0TkI4k0VSM1Qg0KGSc3i8rU+xrxe19A/BN1zHyVSJY7uoutVlaTSzYyk/v5AmkewAP7jtg==
 
 xpath@^0.0.32:
   version "0.0.32"
