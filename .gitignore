@@ -1,6 +1,7 @@
 .DS_Store
 .env
 
+src/js/*.json
 dist/
 node_modules/
 /js/
