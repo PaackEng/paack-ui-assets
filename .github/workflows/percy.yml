@@ -17,11 +17,14 @@ jobs:
 
       - name: Setup Node
         uses: actions/setup-node@v2
+        with:
+          node-version: "lts/*"
+          cache: "yarn"
 
       - name: Percy test
         uses: cypress-io/github-action@v2
         with:
-          install-command: yarn --frozen-lockfile --silent
+          install-command: yarn install --frozen-lockfile --silent
           cache-key: percy-${{ hashFiles('yarn.lock') }}
           start: yarn run preview
           wait-on: "http://localhost:1234"
