@@ -15,7 +15,7 @@
     "optimize-svgs": "rm -f dist/optimizedSvg/* && svgo -f ./src/svg -o ./dist/optimizedSvg",
     "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icon-sprite.svg dist/optimizedSvg/*.svg --symbol-example=true",
     "lint": "eslint src/js",
-    "preview": "yarn run build:spritesheet && parcel serve dist/sprite.symbol.html"
+    "preview": "yarn run build:spritesheet && sed -i'' 's/<footer>/<!-- footer/;s/<\/footer>/-->/' dist/sprite.symbol.html && parcel serve dist/sprite.symbol.html"
   },
   "author": "PackEng",
   "license": "MIT",
