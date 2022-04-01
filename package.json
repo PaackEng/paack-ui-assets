@@ -1,6 +1,6 @@
 {
   "name": "paack-ui-assets",
-  "version": "0.2.2",
+  "version": "0.3.0",
   "description": "",
   "files": [
     "js"
@@ -9,11 +9,11 @@
     "prepublish": "yarn run gen:names && yarn run build",
     "gen:names": "node src/utils/getSVGFilename.js",
     "build": "yarn run build:spritesheet && yarn run build:parcel",
-    "postbuild": "cp src/js/SVGIconNames.json js/SVGIconNames.json",
+    "postbuild": "cp src/js/SVGIconNames.json js/SVGIconNames.json && cp dist/icons-sprite.svg js/icons-sprite.svg",
     "build:parcel": "parcel build src/js/*.js --out-dir ./js",
     "build:spritesheet": "yarn run optimize-svgs && yarn run create-svg-sprite",
     "optimize-svgs": "rm -f dist/optimizedSvg/* && svgo -f ./src/svg -o ./dist/optimizedSvg",
-    "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icon-sprite.svg dist/optimizedSvg/*.svg --symbol-example=true",
+    "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icons-sprite.svg dist/optimizedSvg/*.svg --symbol-example=true",
     "lint": "eslint src/js",
     "preview": "yarn run build:spritesheet && sed -i'' 's/<footer>/<!-- footer/;s/<\\/footer>/-->/' dist/sprite.symbol.html && parcel serve dist/sprite.symbol.html"
   },
