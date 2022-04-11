@@ -11,5 +11,7 @@ class PaackSvgIconSprite extends HTMLElement {
     this.innerHTML = svg;
   }
 }
+if(typeof window === 'undefined'){
+  window.customElements.define('paack-svg-icon-sprite', PaackSvgIconSprite);
+}
 
-window.customElements.define('paack-svg-icon-sprite', PaackSvgIconSprite);
