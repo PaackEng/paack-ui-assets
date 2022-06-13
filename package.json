@@ -22,7 +22,7 @@
   "devDependencies": {
     "@percy/cli": "^1.0.7",
     "@percy/cypress": "^3.1.1",
-    "cypress": "^9.5.4",
+    "cypress": "^10.1.0",
     "eslint": "^8.13.0",
     "parcel-bundler": "^1.12.5",
     "svg-sprite": "^1.5.4",
