@@ -10,7 +10,7 @@
     "gen:names": "node src/utils/getSVGFilename.js",
     "build": "yarn run build:spritesheet && yarn run build:parcel",
     "postbuild": "cp src/js/SVGIconNames.json js/SVGIconNames.json && cp dist/icons-sprite.svg js/icons-sprite.svg",
-    "build:parcel": "parcel build src/js/*.js --out-dir ./js",
+    "build:parcel": "parcel build src/js/*.js --dist-dir ./js",
     "build:spritesheet": "yarn run optimize-svgs && yarn run create-svg-sprite",
     "optimize-svgs": "rm -f dist/optimizedSvg/* && svgo -f ./src/svg -o ./dist/optimizedSvg",
     "create-svg-sprite": "svg-sprite --symbol --symbol-inline --symbol-dest=dist/ --symbol-sprite=icons-sprite.svg dist/optimizedSvg/*.svg --symbol-example=true",
@@ -24,7 +24,7 @@
     "@percy/cypress": "^3.1.1",
     "cypress": "^9.5.4",
     "eslint": "^8.13.0",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.6.2",
     "svg-sprite": "^1.5.4",
     "svgo": "^2.8.0"
   }
