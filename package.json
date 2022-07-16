@@ -20,10 +20,10 @@
   "author": "PackEng",
   "license": "MIT",
   "devDependencies": {
-    "@percy/cli": "^1.0.7",
+    "@percy/cli": "^1.6.1",
     "@percy/cypress": "^3.1.1",
     "cypress": "^9.5.4",
-    "eslint": "^8.13.0",
+    "eslint": "^8.19.0",
     "parcel": "^2.6.2",
     "svg-sprite": "^1.5.4",
     "svgo": "^2.8.0"
