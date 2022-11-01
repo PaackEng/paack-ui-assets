@@ -25,7 +25,7 @@
     "cypress": "^9.5.4",
     "eslint": "^8.19.0",
     "parcel": "^2.6.2",
-    "svg-sprite": "^1.5.4",
+    "svg-sprite": "^2.0.1",
     "svgo": "^2.8.0"
   }
 }
